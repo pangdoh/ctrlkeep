@@ -19,7 +19,7 @@ client
 最简单例子：./client -host 192.168.0.112 -port 80
 
 本地命令：
-!q 结束本次连接
-!shutdown 结束目标进程
+\!q 结束本次连接
+\!shutdown 结束目标进程
 
 目前只支持单线程
